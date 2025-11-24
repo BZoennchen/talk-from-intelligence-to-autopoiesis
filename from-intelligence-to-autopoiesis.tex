@@ -1,0 +1,612 @@
+\documentclass[aspectratio=169,handout]{beamer}
+\usetheme{MUCDAI}
+\usepackage[absolute,overlay]{textpos}
+%\usepackage{sansmathfonts}
+%\usepackage[T1]{fontenc}
+\usepackage[autostyle]{csquotes}
+\usepackage[noorphans=true,vskip=0.5em,font={itshape,raggedright}]{quoting}
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{caption}
+\usepackage[numberedbib]{apacite}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{patterns}
+
+\setbeamercovered{transparent}
+
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+\title{From Intelligence to Autopoiesis}
+\subtitle{Rethinking Artificial Intelligence through Systems Theory}
+\author{Benedikt Zönnchen}
+%\institution{Munich Center for Digital Science and AI}
+\date{11th of November 2025}
+
+\begin{document}
+	
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+	
+	\begin{frame}[plain]{}
+		\tableofcontents
+	\end{frame}
+	
+	%\section{Problematische Begriffe}
+	
+	% Intelligenz
+	
+	% Bewusstsein
+	
+	% Verstehen
+	
+	%\section{Luhmanns Systemtheorie}
+	
+	\section{Why Luhmann's Systems Theory?}
+	\begin{frame}
+		\frametitle{Systems Theory?}
+		Why am I interested in \textit{systems theory}?
+		\begin{itemize}
+			\item It makes so much sense.
+			\item Systems thinking increasingly shapes discussions in the field of sustainability.
+			\item It offers an abstract vocabulary that feels familiar to a computer scientist.
+			\item Strong influence of Maturana \& Varela.
+			\item Reality made less and less sense to me $\Rightarrow$ Is my model wrong?
+			\pause
+			\item Unsatisfied with the current \enquote{AI hype}
+			\begin{itemize}
+				\item What \textit{is} intelligence, superintelligence, AGI?
+				\item Why do we suddenly believe (again) that computers can think or even possess consciousness?
+				\item How do we distinguish between my autonomy and agency and that of the \enquote{tools} I use?
+				\item Is there a \textit{conceptual} or \textit{fundamental} difference between a clock and a large language model?
+				\item If so, what is it?
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+		\begin{frame}{What is Intelligence?}
+		\begin{quoting}
+			\enquote{The ability of an agent to achieve goals in a wide range of environments.}\\-- \cite{Russell2019}
+		\end{quoting}
+		\pause
+		Let $E$ be the space of all computable reward summable environmental measures with respect to the reference machine $\mathcal{U}$, and let $K$ be the Kolmogorov complexity function.
+		The expected performance of agent $\pi$ with respect to the universal distribution $2^{-K(\mu)}$ over the space of all environments $E$ is given by,
+		\begin{equation*}
+			\Psi(\pi):= \sum_{\mu \in E} 2^{-K(\mu)} V_\mu^\pi.
+		\end{equation*}
+		We call this the \textbf{universal intelligence} of agent $\pi$ \cite{LeggHutter2007}.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{What is Intelligence?}
+		\begin{quoting}
+			\enquote{Meine These ist, dass es keine Künstliche Intelligenz gibt. [...] Intelligenz und Denken sind die Fähigkeiten eines Lebewesens, die prinzipiell nicht in Systemen nachgebaut werden können, die nicht lebendig sind. Lebendigkeit ist eine notwendige Voraussetzung für das Vorliegen von Intelligenz.} \\-- \cite{gabriel:2024}
+		\end{quoting}
+	\pause
+	\vspace{0.5cm}
+		\begin{quoting}
+			\enquote{Dieses Szenario, [der autopoietischen Programme, die sich selbst optimieren], setzt voraus, dass die Systeme der Künstlichen Intelligenz überhaupt intelligent sind. Sonst könnten sie das Vergleichsmaß nicht ansetzen. Sie könnten nicht sagen: \enquote{Die sind in irgendetwas intelligenter als wir.}} -- \cite{gabriel:2024}
+		\end{quoting}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{What is Intelligence?}
+		\begin{quoting}
+			\enquote{Die Gewissheit der Unterscheidung zwischen Fiktion und Realität, die man scheinbar ganz einfach zieht, erodiert langsam. Ich verliere immer mehr von dieser westlichen Gewissheit, die mich die KI als tolles Instrument hat sehen lassen---aber sicher nicht als ein Gegenüber. Ich glaube, diese Auffassung ist falsch! Die KI ist ein echtes Gegenüber, aber natürlich kein menschliches Gegenüber.} -- \cite{gabriel:2025}
+		\end{quoting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Why Luhmann?}
+		\begin{columns}
+				\begin{column}{0.7\textwidth}
+					\begin{quoting}
+						\enquote{Menschen können nicht kommunizieren, nicht einmal ihre Gehirne können kommunizieren, nicht einmal das Bewußtsein kann kommunizieren. Nur die Kommunikation kann kommunizieren.}\\-- Luhmann (1927-1998)
+					\end{quoting}
+				\end{column}
+				\begin{column}{0.25\textwidth}
+					\includegraphics[width=\textwidth]{./images/luhmann.jpg}
+				\end{column}
+		\end{columns}
+		\vspace{1cm}
+		Luhmann provides a framwork to talk about living, psychic and social system. Why not include \textit{artificial systems}?
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Why Luhmann?}
+		\begin{enumerate}
+			\item Influeced by Hegel, Husserl, Kant, Maturana \& Varela, von Foerster, Bateson, Spencer-Brown
+			\item Controversial with the dominant Frankfurt School (Adorno, Horkheimer, Marcuse, Habermas)
+			\item A sociologist who is not interested in humans (\textbf{anti-humanist})
+			\item Describes but gives no normative guidance (value-neutral)
+			\item Often called conservative but his theory is radical
+			\item Hard to read (there is no starting point)
+			\item Excessive abstractions and obscurity, hard to falsify, maybe too grand of a theory
+			\item Calls himself \enquote{operational contructivist}
+		\end{enumerate}
+	\end{frame}	
+
+	\begin{frame}
+		\frametitle{Luhmann the Anti-Humanist}
+		\begin{quoting}
+			\enquote{It's all wrong but of high quality.} -- Jürgen Habermas
+		\end{quoting}
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Luhmann the Anti-Humanist}
+		\textbf{Some of Luhmann's provocations:}
+		\begin{enumerate}
+			\item<1-> \textbf{Difference} not identity is the fundament of theory.
+			\item<2-> Only social systems communicate, \textbf{humans do not communicate!}
+			\item<3-> Once entered into communication one can no longer go back to the prardise of the soul.
+			\item<4-> Every system (e.\,g. mass media, science, sociology) observes with an unavoidable \textbf{blind spot}.
+			\item<5-> Descriptions seem to be made from outside but they are in fact made from within which always leads to a \textbf{paradox}.
+			\item<6-> Reduction of complexity brings about an increase in complexity.
+			\item<7-> Mass media (books, TV, social media) do not distort \textbf{reality}, they \textbf{construct} it. They conduct how society sees itself.
+			\item<8-> The more information, the more misinformation.
+		\end{enumerate}
+	\end{frame}	
+
+	\begin{frame}
+		\frametitle{Luhmann's Supertheory}
+		\begin{columns}
+			\begin{column}{0.7\textwidth}
+				Luhmann wanted to give a complete description of society. This includes his description ($\Rightarrow$ a paradox).\\
+				\vspace{0.5cm}
+				\pause
+				Buchtitel:
+				\begin{itemize}
+					\item Die Wissenschaft der Gesellschaft \cite{Luhmann1992}
+					\item Das Kunst der Gesellschaft \cite{Luhmann1997}
+					\item Die Realität der Massenmedien \cite{Luhmann2004}
+					\item Die Gesellschaft der Gesellschaft \cite{Luhmann1998}
+					\item ...
+				\end{itemize}
+			\end{column}
+			\begin{column}{0.25\textwidth}
+				\includegraphics[width=\textwidth]{./images/luhmann.jpg}
+			\end{column}
+		\end{columns}
+	\end{frame}	
+	
+	\section{Finding an Enlightened Ground}
+	\begin{frame}
+		\begin{quoting}
+			\enquote{[M]any people would accept that we do not really have knowledge of the world; we have knowledge only of our representations of the world. Yet we seem condemned by our constitution to treat these representations as if they were the world, for our everyday experience feels as if it were of a given and immediate world.} -- Francisco Varela
+		\end{quoting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Transcendental Idealism}
+		\begin{columns}
+			\begin{column}{0.8\textwidth}
+				\includegraphics[width=\textwidth]{./images/kant-cognition.png}
+			\end{column}
+			\begin{column}{0.2\textwidth}
+				\includegraphics[width=\textwidth]{./images/kant.jpg}
+			\end{column}
+		\end{columns}
+		\begin{figure}
+		\end{figure}
+		\pause
+		Kant searched for the conditions of making coherent experiences \cite{Kant1781}.
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Transcendental Idealism}
+		Kant argues that the mind does not just record sensory input (Hume)---it organizes it.
+		\begin{itemize}
+			\item Space and time are \textit{a priori} \textbf{forms of intuition}: the mind's built-in ways of structuring all sensory data.
+			\item The \textbf{categories of the understanding} (like causality, substance, unity, plurality) shape how we can think about what we perceive.
+		\end{itemize}
+		\pause
+		$\Rightarrow$ According to Kant, synthetic a priori knowledge is possible because the mind itself provides the a priori forms and concepts that structure all experience.
+		%Kant thought that \textbf{Reason} can bring about an enlightened society.
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Transcendental Idealism}
+		Kant thought that anything could be discussed and critiqued:
+		\begin{quoting}
+			\enquote{For enlightenment of this kind, all that is needed is freedom. And the freedom in question is the most innocuous form of all---freedom to make public use of one's reason in all matters.} -- Kant
+		\end{quoting}
+		\pause
+		But, of course, only reasonable people have this freedom! Woman were excluded.\\
+		\vspace{0.5cm}
+		\pause
+		This tradition of a belief in the \textbf{Voice of Reason} in \textbf{public discourse} is still alive (compare e.\,g. Habermas) but questioned by many e.\,g. Luhmann, Rorty.\\
+		\vspace{0.5cm}
+		\pause
+		That almost everyone can now \enquote{speak} has neither lead to an \enquote{enlightened society} (Kant) nor a \enquote{revolution of the oppressed} (Marx).
+	\end{frame}
+
+	\begin{frame}
+		\begin{quoting}
+			\enquote{Objectivity is the illusion that observations can be made without an observer [even Kant's observation of forms of intuition and categories of understanding].} -- Heinz von Foerster
+		\end{quoting}
+	\end{frame}
+
+	\begin{frame}
+		\begin{quoting}
+			\enquote{I think we should not abandon [Kant's] idea of resistance, but we should relocate it into the system. It is the result of resolving an internal conflict---the result of the system's operations resisting the operations of the same system.} -- \cite{Luhmann1995}
+		\end{quoting}
+	\end{frame}
+	
+	\section{Breaking the Ground}
+	\begin{frame}
+		\frametitle{Evolution of Cybernetics}
+		\textbf{Milestones}
+		\begin{enumerate}
+			\item<1-> \textbf{Macy Conferences (1946--1953)}: Birth of 1st-order cybernetics: feedback, circular causality, information, early computing.
+			\item<1-> \textbf{1950s--1960s Expansion}: Control engineering, biology, anthropology/psychology; neural nets and symbolic AI diverge.
+			\item<2-> \textbf{2nd-Order Cybernetics (1960s--1970s)}: Observer included; von Foerster, Bateson, Maturana \& Varela; BCL and ASC as hubs.
+			\item<3-> \textbf{Integration (1970s--1990s)}: Systems thinking, complexity, organizational cybernetics (Beer), constructivism; influence on therapy and design.
+			\item<4-> \textbf{2000s--Today}: Enactive/embodied cognition; complexity science; ML/AI, HCI, systems design and resilience.
+		\end{enumerate}
+		\textbf{Key figures:} \uncover<1->{Wiener, McCulloch, Shannon, von Neumann,} \uncover<2->{von Foerster, Bateson; Maturana \& Varela; Beer, Mead.}
+	\end{frame}	
+
+	\begin{frame}
+		\frametitle{First-order cybernetics}
+		The study of the control of \textit{observed} systems.
+		\begin{itemize}
+			\item \textbf{Focus:} How systems maintain stability and control via feedback.
+			\item \textbf{Observer:} Treated as outside the system being studied.
+			\item \textbf{Key question:}
+			\begin{itemize}
+				\item How can we measure, predict, control, or regulate a system?
+				\item How does feedback produce order?
+			\end{itemize}
+			\item \textbf{Domains:} engineering, biology, control theory, early AI.
+			\item \textbf{Conceptual stance:} More aligned with a scientific realist perspective. The system has properties that the observer discovers.
+		\end{itemize}
+		%Kant thought that \textbf{Reason} can bring about an enlightened society.
+	\end{frame}
+
+	\begin{frame}
+		\begin{quoting}
+			\enquote{The creature that wins against its environment destroys itself.}\\-- \cite{Bateson1972}
+		\end{quoting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Second-order cybernetics}
+		The study of \textit{observing} systems that cannot control their environment.
+		\begin{itemize}
+			\item \textbf{Focus:} How observers generate descriptions of systems---including how their own participation shapes what they observe.
+			\item \textbf{Observer:} Included inside the system; observation is itself part of the dynamics.
+			\item \textbf{Key question:}
+			\begin{itemize}
+				\item How do observers construct reality?
+				\item How does cognition arise from self-organizing systems?
+				\item What are the implications of the observer affecting what is observed?
+			\end{itemize}
+			\item \textbf{Domains:} cognition, social systems, communication, therapy, education, design.
+			\item \textbf{Conceptual stance:} Constructivist, not necessarily realist. Reality is not \enquote{discovered} but co-constructed through interaction.
+		\end{itemize}
+		%Kant thought that \textbf{Reason} can bring about an enlightened society.
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Second-order cybernetics}
+		The study of \textit{observing} systems that cannot control their environment.
+		\begin{itemize}
+			\item<2-> No universal a priori categories; cognitive structure arise from biological autopoiesis, learning, and interaction (strcutural coupling)
+			\item<3-> Knowledge has viability rather than necessity: works for the system in its environment, but could be otherwise
+			\item<4-> Limits of knowledge are operational, based on system organization
+		\end{itemize}
+		\uncover<5->{Comparison:}
+		\begin{itemize}
+			\item<5-> \textbf{Kant:} The mind \textit{must} structure the world in certain ways (necessary and universal).
+			\item<6-> \textbf{2nd-order cybernetics:} Each observer \textit{does} structure its world in certain ways (contingent, system-relativ).
+		\end{itemize}
+		\uncover<7->{What counts as \enquote{knowledge} is a product of a system's structure and history---not a transcendental a priori.}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Second-order cybernetics}
+		Information is no longer an object or a signal but a relational effect within a system capable of perceiving and responding to differences.\\
+		\vspace{1cm}
+		\pause
+		\begin{quoting}
+			\enquote{Information is a difference that makes a difference.} -- \cite{Bateson1972}
+		\end{quoting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Operational Clousure and Structural Coupling}
+		\begin{columns}
+			\begin{column}{0.7\textwidth}
+				According to \cite{Maturana1987}, the nervous \textbf{system} is
+				\begin{enumerate}
+					\item energetically/materially open 
+					\item semantically closed
+				\end{enumerate}
+				meaning that \textbf{environmental perturbations} do not convey information; the system specifies its own changes.
+				\begin{center}
+					\enquote{order from noise}
+				\end{center}
+			\end{column}
+			\begin{column}{0.3\textwidth}
+			\includegraphics[width=\textwidth]{./images/maturana.jpg}
+			\end{column}
+		\end{columns}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Operational Clousure and Structural Coupling}
+		\textbf{Key idea:}
+		\begin{enumerate}
+			\item<1-> \textbf{Operational clousure:} A system can only operate through its own internal operations.
+			\item<2-> \textbf{Structural coupling:} Environment and organism co-evolve in interaction. The environment triggers changes, but the (nervous) system determines what those changes mean.
+			\item<3-> \textbf{No inputs as \enquote{information}:} Sense organs do not transmit objective information; they trigger state changes that the nervous system interprets through its own dynamics (Maturana).
+			\item<4-> \textbf{Not isolation, but self-referential autonomy}: Operational closure does not mean isolation. The system can generate internal information by interpreting environmental events through its own code (Luhmann).
+			%\item \textbf{Autopoiesis:} Living systems continuously produce and maintain themselves; cognition is an aspect of this self-producing organization.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Operational Clousure}
+		A system is operationally closed when it produces and links its own operations according to its own organization.
+		\begin{enumerate}
+			\item<2-> Psychic systems (\enquote{minds}) \textit{thinks} / \textit{perceive} (Husserl \& Luhmann)
+			\item<3-> social systems \textit{communicate} (Luhmann) and
+			\item<4-> living systems realize metabolic processes (Maturana \& Varela)
+		\end{enumerate}
+		\uncover<5->{Operational closure enables systems to remain \textbf{autonomous}.}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Structural Coupling}
+		\begin{enumerate}
+			\item<1-> \textbf{Mutual Influence, No Instruction:} The environment does not specify what the system must do; it merely triggers changes. The system's own structure determines how it changes.
+			\item<2-> \textbf{History-Dependent:} Structural coupling is not a single interaction but a history of recurrent interactions that gradually align system and environment.
+			\item<3-> \textbf{Autonomy Preserved:} The system remains operationally closed: it only responds in ways permitted by its organization. Coupling never compromises autonomy.
+			\item<4-> \textbf{Co-Conditioning:} The organism changes with the environment, and the environment changes with the organism---a co-evolution of structures.
+			\item<5-> \textbf{Basis of Cognition and Meaning:}  Cognition $\approx$ the activity of a structurally coupled, autopoietic system. What \enquote{counts as information} emerges from this coupling.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{System/Environment-Difference}
+		\begin{quoting}
+			\enquote{We assume that systems exist} -- \cite{Luhmann1988}
+		\end{quoting}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{System/Environment-Difference}
+		\begin{enumerate}
+			\item<1-> A \textit{system} \textit{is} what it \textit{does}: \textit{operate}
+			\item<2-> It consists not of \enquote{things} but operations
+			\item<3-> The \textit{world} is only accessible via the \textit{environment}
+			\item<4-> A \textit{system} is its difference to its environment (paradox?)
+			\item<5-> The environment is the exterior of the system
+			\item<6-> A system differentiates itself from its environment
+			\item<7-> All / some? systems \textit{observe} 
+			\item<8-> \textit{Oberservation}, including self-observation via \textit{re-entry} \cite{Brown1969} (paradox?) and higher order-observation means \textit{indication} and \textit{distinction} \cite{Brown1969} 
+			\item<9-> \textit{Oberservation} copies the system/environment distinction into the system
+			\item<10-> There is no observation from nowhere $\Rightarrow$ there is always a \textit{blind spot}
+			\item<11-> \textit{Resonance} is achieved whenever a signal in the environment affects the system's self-referential operation mode \cite{Buchinger2012}
+		\end{enumerate}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Autopoiesis}
+		\begin{quoting}
+			\enquote{We want to designate as autopoietic those systems that produce and reproduce the elements from which they are composed by means of the elements from which they are composed.} -- Luhmann
+		\end{quoting}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Autopoiesis}
+		\begin{quoting}
+			\enquote{Operation is the occurence of events, whoms reproduction performs the autopoiesis of the system, that is, the reproduction of the difference of system and environment.} -- \cite{Luhmann2004}
+		\end{quoting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{The Re-Entry: Embrace the Paradox}
+		
+		\begin{align*}
+			 x^2 &= 4 \\
+			\Rightarrow x &= 4 / x \\
+			\Rightarrow x &= 4 / (4 / x) \\
+			\Rightarrow x &= 4 / (4 / (4 / x)) \\
+			\Rightarrow x &= \ldots \\
+			\Rightarrow x &= 4 / (4 / (4 / \ldots ))  
+		\end{align*}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{The Re-Entry: Embrace the Paradox}
+		A paradox outside of time becomes productive in time:
+		\begin{align*}
+			 i^2 &= -1 \\
+			\Rightarrow i &= -1/i \\
+			\Rightarrow i &= -1/ (-1 / i) \\
+			\Rightarrow i &= \ldots \\
+			\Rightarrow i &= -1/ (-1 / \ldots )
+		\end{align*}
+		$i$ enters itelf in its definition? If we set $i = 1$ we get 
+		\begin{align*}
+			1 = -1/1 = -1.
+		\end{align*}
+		If we set $i = -1$ we get
+		\begin{align*}
+			-1 = -1/(-1) = 1
+		\end{align*}
+		both is clearly paradoxical. \cite{Brown1969} extends the Boolean algebra with the imaginary.
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{The Re-Entry: Embrace the Paradox}
+		\begin{itemize}
+			\item I reflect on myself.
+			\item Science communicates about its methods.
+			\item The media reports on the media.
+			\item ...
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Functional Differentiation}
+		For Luhmann the characteristic of a modern society is its \textit{functional differentiation}.
+	\end{frame}
+
+	\section{Artificial Systems -- A Paradox?}
+	\begin{frame}
+		\frametitle{What is Technology?}
+		Technology almost disappears (if it works) (\enquote{Handlichkeit} \cite{Heidegger1977}).
+		\begin{itemize}
+			\item It is an evolutionary achievement that simplifies complexity.
+			\item We (and social systems) can observe if it does \textit{work} or it does \textit{not work}.
+			\item It reduces uncertainty in a way that results in \textit{manageable ignorance}.
+		\end{itemize}
+		Some conceptialize technology as an autopoietic system, compare \cite{Reichel2011,Watson2024,Lovasz2023}.
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Turing Machines as Operations}
+		Turing machines can be self-referential. They are
+		\begin{itemize}
+			\item<1-> \textbf{strictly/tightly coupled} with psychic systems, e.\,g. developers (and other Turing machines),
+			\item<2-> \textit{trivial machines} \cite{vonFoerster2003}
+			\item<3-> \textbf{basal self-referential}, computations refer to other computations, e.\,g. a function calls itself.
+			\item<4-> not \textit{contingent} in themselves. It is precisely our effort to keep them deterministic such that they work.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Self-Learning Turing Machines}
+		Self-learning Turing machines (ANNs) enable second-order observation of structures psychic systems cannot, by themselves, make sense of.
+		\begin{itemize}
+			\item<2-> \textbf{Loosely coupled} with psychic and social systems (and soon probably with other self-learning machines)
+			\item<3-> They are \textbf{contingent} (despite being deterministic) because the data they are trained on is contingent.
+			\item<4-> It is unlikely that they differentiate between \textit{self-reference} and \textit{other-reference}. They realize \textbf{no re-entry}, that is, they do not re-introduce the system/environment distinction into themselves.
+			\item<5-> This would require that they are \textit{meaning-based} systems \cite{Buchinger2012}.
+		\end{itemize}
+		\uncover<6->{Psychic and social systems co-evolved together which had led to a common achievement: meaning (Sinn).}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Large Language Models}
+		Large language models couple with society via a common medium, that is, language!
+		\begin{itemize}
+			\item<1-> Can revisit, expand, or summarize their own previously generated text. But the text has to be provided. 
+			\item<2-> Using chain-of-thought they seem to trigger themselves: \enquote{Is this step correct.} Computing the most plausible text which is often either a rejection or justification of what was written before.
+			\item<3-> This is a form of rudimentary \textbf{processual self-referentiality} where plausibility assessment itself recursively shapes subsequent outputs.
+			\item<4-> But again, there is \textbf{no re-entry} and it is difficult to argue that the architecture of LLMs support its emergence.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Artificial Communication}
+		We agree with \cite{Esposito2017,Esposito2024} that LLMs participate in / shape communication and expand on this idea.
+		\begin{quoting}
+			\enquote{However, even in the absence of a re-entry, interactions between language models and psychic systems nonetheless constitute a form of communication---despite one participant lacking any intrinsic capacity for sense making} -- \cite{zoennchen:2025}
+		\end{quoting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Artificial Communication}
+		\begin{quoting}
+			\enquote{Unlike classical machines, which are strictly coupled to psychic and social systems via formal languages, ANNs introduce a second, looser coupling through the \enquote{digestion} of training data derived from memorized communcation of social systems. In this way, they parasitically \enquote{absorb} social contingencies.} -- \cite{zoennchen:2025}
+		\end{quoting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Artificial System?}
+		The term \textit{artificial system} seems to be a contradiction.
+		To become such a system, \enquote{AI's} have to
+		\begin{itemize}
+			\item<2-> generate their own operations,
+			\item<3-> maintain their own organization,
+			\item<4-> create a system-environment distinction (and re-enter), and
+			\item<5-> reproduce themselves through their own output.
+		\end{itemize}
+		\uncover<6->{At the moment, we can only infer that they seem to tighten their coupling.}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Artificial System?}
+		\enquote{We} \textbf{observed} large language models as the following \cite{zoennchen:2025}:
+		\begin{itemize}
+			\item<1-> Language models function as cognitive systems in Luhmann's sense, in that they are structurally coupled to communication but possess only limited capacity, that is, limited processual and no reflective self-referentiality.
+			\item<2-> Their outputs emerge through pattern selection based on internal probability distributions, yet without system-intrinsic sense-making.
+			\item<3-> Their coupling with social and psychic systems is partly loose and partly strict: they depend on intransparent socially generated data and transparent optimization algorithms, their internal processes remain opaque.
+			\item<4-> They extend beyond mere \enquote{parroting}: instead of simply replicating existing text, they generate novel combinations of linguistic elements, which psychic and social systems subsequently interpret.
+			\item<5-> They function simultaneously as both a medium and artificial communication partners, blurring the line between a tool and an autopoietic system.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Notes for AI Development}
+		\begin{itemize}
+			\item There is no unbiased AI.
+			\item Uniliteral control leads to catastrophe $\Rightarrow$ replace unilateral control with mutual coupling.
+			\item Build in negative feedback loops.
+			\item Do not only ask: \enquote{How can we make AI perform better} but \enquote{What \textbf{assumptions} about intelligence, knowledge, and value are built into our AI---and how can we learn from them?}
+			\item Consider the human developer, data curator, and user as part of the feedback loop.
+			\item Ask: \enquote{What is this system teaching us about ourselves?}
+			\item Develop policy and regulation that learns and updates as AI systems evolve.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Disclaimer: Epistemic Humility}
+		There is nothing outside of observations.
+		\begin{itemize}
+			\item<2-> Everything being thought, perceived and communicated were observations!
+			\item<3-> But according to Luhmann, operational closure of a self-referential system cannot be directly observed from outside; it can only be inferred from its effects.
+			\item<4-> Therefore, psychic systems or science will never be able to \enquote{prove} such closure if AI is not operating in the same medium (sense). \textbf{A reflexive grounding becomes impossible.}
+		\end{itemize}
+	\end{frame}
+	
+	% Warum Luhmann? 
+	% => Ersetzt verstehen durch anschlussfähig, betrachtet nicht lebende Systeme als erkennende Systeme (was bedeutet Erkennen hier?)
+	% => Realität macht depressiv wenig Sinn
+	% => Theorei basiert auf mathematischem Fundament (Laws of Form)
+	
+	% Hume. Descarte, Kant
+	
+	% Laws of Form (Intro)
+	
+	% Theorie schwer zu erklären da zirkulär => fürchtet keine Zirkularität sondern basiert auf ihr
+	
+	% Kurze Geschichte der Kommunikation?
+	
+	% Beobachter
+	
+	% Operativer Konstruktivismus => Epistemische Bescheidenheit / Zurückhaltung
+	
+	% System/Environment
+	
+	% Funktionale Differenzierung
+	
+	% Codes, Programme
+	
+	% 
+	
+	
+	\begin{frame}[plain]
+		%\tableofcontents
+		%\begin{textblock}{5.0}(10.101,5.001)
+			\centering \Huge\bfseries
+			Any questions?
+		%\end{textblock}
+	\end{frame}
+
+
+	\appendix
+	\inappendixtrue
+	
+	\begin{frame}[plain,allowframebreaks]{References} 
+		\bibliographystyle{apacite}
+	 	\bibliography{ac}
+	\end{frame}
+	
+\end{document}
